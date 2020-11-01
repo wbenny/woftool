@@ -156,7 +156,7 @@ to create the reparse point this way.
 woftool.exe <source> <destination> <algorithm> <threads>
 ```
 
-Valid values for <algorithm>:
+Valid values for `<algorithm>`:
 * xpress4k
 * xpress8k
 * xpress16k
