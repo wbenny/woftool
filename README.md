@@ -108,7 +108,7 @@ The actual content of the `:WofCompressedData` stream consists of 2 parts:
 
 The chunk table is simply an array of `uint32_t` elements and each item contains an offset to the next compressed chunk.
 One might ask - what if the compressed file is bigger than 4GB? The answer is - if the _uncompressed_ file is bigger
-than 4GB, then the chunk table actually consists of `uint64_t`.
+than 4GB, then the chunk table actually consists of `uint64_t` elements.
 
 The actual compressed data are simply concatenated compressed data blocks. If any compressed block size is higher than
 the uncompressed block, then the block is stored as uncompressed data.
