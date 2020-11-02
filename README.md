@@ -130,7 +130,7 @@ another disk - it'll get decompressed during the copy. The only option seemed to
 drive and continuously compress it there. However, it has obvious disadvantages - it'll be painfully slow.
 
 One might ask - couldn't you just use some kind of backup tool, that backs up files with all Alternate Data Streams?
-The answer is, unfortunatelly, **no**.
+The answer is, unfortunately, **no**.
 
 The reason it's not possible is that the `wof.sys` filter driver actually **hides** the `:WofCompressedData`
 stream - it's not visible by any tool. Also, any attempt to directly create or open `:WofCompressedData` results in
