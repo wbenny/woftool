@@ -1,6 +1,7 @@
 #pragma once
 #include <ntdll.h>
 
+
 //////////////////////////////////////////////////////////////////////////
 // Structures.
 //////////////////////////////////////////////////////////////////////////
@@ -30,8 +31,9 @@ typedef struct _WOF_FILE
     //
     // Compression algorithm.
     //
-    ULONG Algorithm;
+    ULONG FileProviderCompression;
 } WOF_FILE, *PWOF_FILE;
+
 
 //////////////////////////////////////////////////////////////////////////
 // Function type definitions.
@@ -43,8 +45,9 @@ typedef NTSTATUS (NTAPI* PWOF_FEED_DATA_CALLBACK)(
     _In_ PVOID Context
     );
 
+
 //////////////////////////////////////////////////////////////////////////
-// Function prototypes.
+// Public functions.
 //////////////////////////////////////////////////////////////////////////
 
 NTSTATUS
@@ -52,7 +55,7 @@ NTAPI
 WofOpenStream(
     _Out_ PWOF_FILE WofFile,
     _In_ PUNICODE_STRING FilePath,
-    _In_ ULONG Algorithm
+    _In_ ULONG FileProviderCompressionAlgorithm
     );
 
 NTSTATUS

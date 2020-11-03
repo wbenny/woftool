@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30523.141
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "woftool", "src\woftool.vcxproj", "{C1DC0381-4D47-49CA-AE23-9EB39D60B195}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wof", "src\wof.vcxproj", "{31BE1F2A-9A15-4CFE-922C-E15AFCC0A415}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{C1DC0381-4D47-49CA-AE23-9EB39D60B195}.Release|x64.Build.0 = Release|x64
 		{C1DC0381-4D47-49CA-AE23-9EB39D60B195}.Release|x86.ActiveCfg = Release|Win32
 		{C1DC0381-4D47-49CA-AE23-9EB39D60B195}.Release|x86.Build.0 = Release|Win32
+		{31BE1F2A-9A15-4CFE-922C-E15AFCC0A415}.Debug|x64.ActiveCfg = Debug|x64
+		{31BE1F2A-9A15-4CFE-922C-E15AFCC0A415}.Debug|x64.Build.0 = Debug|x64
+		{31BE1F2A-9A15-4CFE-922C-E15AFCC0A415}.Debug|x86.ActiveCfg = Debug|Win32
+		{31BE1F2A-9A15-4CFE-922C-E15AFCC0A415}.Debug|x86.Build.0 = Debug|Win32
+		{31BE1F2A-9A15-4CFE-922C-E15AFCC0A415}.Release|x64.ActiveCfg = Release|x64
+		{31BE1F2A-9A15-4CFE-922C-E15AFCC0A415}.Release|x64.Build.0 = Release|x64
+		{31BE1F2A-9A15-4CFE-922C-E15AFCC0A415}.Release|x86.ActiveCfg = Release|Win32
+		{31BE1F2A-9A15-4CFE-922C-E15AFCC0A415}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

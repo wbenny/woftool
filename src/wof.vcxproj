@@ -19,42 +19,50 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\main.c" />
+    <ClInclude Include="wof\algorithm.h" />
+    <ClInclude Include="wof\algorithm\xpress.h" />
+    <ClInclude Include="wof\common.h" />
+    <ClInclude Include="wof\io.h" />
+    <ClInclude Include="wof\threadpool.h" />
+    <ClInclude Include="wof\wof.h" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="wof.vcxproj">
-      <Project>{31be1f2a-9a15-4cfe-922c-e15afcc0a415}</Project>
-    </ProjectReference>
+    <ClCompile Include="wof\algorithm.c" />
+    <ClCompile Include="wof\algorithm\xpress.c" />
+    <ClCompile Include="wof\common.c" />
+    <ClCompile Include="wof\io.c" />
+    <ClCompile Include="wof\threadpool.c" />
+    <ClCompile Include="wof\wof.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{c1dc0381-4d47-49ca-ae23-9eb39d60b195}</ProjectGuid>
+    <ProjectGuid>{31BE1F2A-9A15-4CFE-922C-E15AFCC0A415}</ProjectGuid>
     <RootNamespace>woftool</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>

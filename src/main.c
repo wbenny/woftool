@@ -1,4 +1,4 @@
-#include "wof.h"
+#include "wof/wof.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -39,6 +39,7 @@ wmain(
         fwprintf(stderr, L"    xpress4k\n");
         fwprintf(stderr, L"    xpress8k\n");
         fwprintf(stderr, L"    xpress16k\n");
+        fwprintf(stderr, L"    lzx\n");
 
         return EXIT_FAILURE;
     }
@@ -66,6 +67,10 @@ wmain(
     else if (!wcscmp(ArgAlgorithm, L"xpress16k"))
     {
         Algorithm = FILE_PROVIDER_COMPRESSION_XPRESS16K;
+    }
+    else if (!wcscmp(ArgAlgorithm, L"lzx"))
+    {
+        Algorithm = FILE_PROVIDER_COMPRESSION_LZX;
     }
     else
     {
@@ -111,12 +116,12 @@ wmain(
     fseek(WofFeeder.File, 0, SEEK_SET);
 
     UNICODE_STRING DestinationPath;
-    DestinationPath.MaximumLength = (USHORT)(sizeof(L"\\??\\") + wcslen(ArgDestinationPath) * sizeof(WCHAR));
-    DestinationPath.Length = 0;
-    DestinationPath.Buffer = malloc(DestinationPath.MaximumLength);
-
-    RtlAppendUnicodeToString(&DestinationPath, L"\\??\\");
-    RtlAppendUnicodeToString(&DestinationPath, ArgDestinationPath);
+    if (!RtlDosPathNameToNtPathName_U(ArgDestinationPath, &DestinationPath, NULL, NULL))
+    {
+        fprintf(stderr, "Cannot find the destination file\n");
+        fclose(WofFeeder.File);
+        return EXIT_FAILURE;
+    }
 
     //
     // Open the destination file.
@@ -158,6 +163,8 @@ wmain(
     //
 
     Status = WofCloseStream(&WofFile);
+
+    RtlFreeUnicodeString(&DestinationPath);
 
     fclose(WofFeeder.File);
 
